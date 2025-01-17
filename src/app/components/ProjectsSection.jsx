@@ -123,7 +123,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 13,
+    id: 14,
     title: "Soptify Clone",
     description: "Spotify clone with Html and CSS",
     image: "/images/projects/spotify.png",
@@ -131,6 +131,7 @@ const projectsData = [
     gitUrl: "https://github.com/SHAJAR5110/Spotify-Clone",
     previewUrl: "https://spotify-clone-seven-blush.vercel.app/",
   },
+  
 ];
 
 const ProjectsSection = () => {
