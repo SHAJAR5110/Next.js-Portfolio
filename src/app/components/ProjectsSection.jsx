@@ -7,6 +7,15 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "Data Sweeper",
+    description: "Handling messy CSV and Excel files can be frustrating, but Data Sweeper makes it effortless! This Streamlit-powered web app allows users to upload, clean, visualize, and convert their data in just a few clicks.",
+    image: "/images/projects/dataSweeper.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/SHAJAR5110/DataSweeper-in-python",
+    previewUrl: "https://datasweeper-in-python-luufexvmupylfidwguujpn.streamlit.app/",
+  },
+  {
+    id: 2,
     title: "Game Page",
     description: "The Front-end of Game Page in Next js and Tailwind css", 
     image: "/images/projects/GamePage.png",
@@ -15,7 +24,7 @@ const projectsData = [
     previewUrl: "https://game-page-frontend.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Static Resume",
     description: "Responsive static resume",
     image: "/images/projects/static.png",
@@ -24,7 +33,7 @@ const projectsData = [
     previewUrl: "https://my-resume-chi-eight.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Mini Project",
     description: "Mini Project for learning purpose",
     image: "/images/projects/MiniProject.png",
@@ -33,7 +42,7 @@ const projectsData = [
     previewUrl: "https://mini-project-navy-three.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Number Guessing Game in Python",
     description: "CLI based number guessing game",
     image: "/images/projects/NumbreGuessing.png",
@@ -42,7 +51,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Domestic Services Web App",
     description: "The FixNow is Domestic Services Web App for all your home needs, 24/7 service providers are available.",
     image: "/images/projects/fixnow.jpeg",
@@ -51,7 +60,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Top-down Car Game in C#",
     description: "The Simple Top-down Car Game in C# using Windows Form Application",
     image: "/images/projects/topdown.png",
@@ -60,7 +69,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Calculator",
     description: "use this command in your terminal to calculate, npm i cmd-simple-calculator",
     image: "/images/projects/cmdCalculator.png",
@@ -69,7 +78,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 8,
+    id: 9,
     title: "Number Guessing Game",
     description: "use this command in your terminal to play, npm i cli-mini-number-guessing-game",
     image: "/images/projects/cmdNGG.png",
@@ -78,7 +87,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 9,
+    id: 10,
     title: " ATM Machine",
     description: "use this command in your terminal, npm i united-atm-machine",
     image: "/images/projects/ATM.png",
@@ -87,7 +96,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 10,
+    id: 11,
     title: " Words Counter",
     description: "The words counter is made with Typescript, Node js and inquirer. For use just type 'nmp i count-my-words' in your cmd.",
     image: "/images/projects/WordCounter.png",
@@ -96,7 +105,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 11,
+    id: 12,
     title: " Todo Task",
     description: "Todo Web App",
     image: "/images/projects/TodoWeb.png",
@@ -105,7 +114,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 12,
+    id: 13,
     title: " Calculator",
     description: "Calculator Web App",
     image: "/images/projects/WebCalculator.jpeg",
@@ -114,7 +123,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 13,
+    id: 14,
     title: " Different Python Codes",
     description: "",
     image: "/images/projects/DpythonCodes.png",
@@ -123,7 +132,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 14,
+    id: 15,
     title: "Soptify Clone",
     description: "Spotify clone with Html and CSS",
     image: "/images/projects/spotify.png",
@@ -131,6 +140,7 @@ const projectsData = [
     gitUrl: "https://github.com/SHAJAR5110/Spotify-Clone",
     previewUrl: "https://spotify-clone-seven-blush.vercel.app/",
   },
+  
   
 ];
 
@@ -172,11 +182,6 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="Npm"
           isSelected={tag === "Npm"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Other"
-          isSelected={tag === "Other"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
