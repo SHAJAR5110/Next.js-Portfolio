@@ -37,7 +37,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          I am a passionate MERN Stack Developer with expertise in building dynamic, user-friendly web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, I specialize in creating full-stack solutions tailored to client needs. Currently expanding my skill set by diving into Artificial Intelligence to develop smarter, data-driven applications. Let&apos;s collaborate to bring your ideas to life with innovation and cutting-edge technology!
+          I am a passionate MERN Stack and Agentic Ai Developer with expertise in building dynamic, user-friendly web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, I specialize in creating full-stack solutions tailored to client needs. Currently expanding my skill set by diving into Agentic Ai to develop smarter, data-driven applications. 
           </p>
           <div>
             <Link
