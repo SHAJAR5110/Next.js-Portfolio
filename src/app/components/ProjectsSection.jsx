@@ -240,16 +240,7 @@ const projectsData = [
     gitUrl: "https://github.com/SHAJAR5110/python-small-projects",
     previewUrl: "/",
   },
-  {
-    id: 27,
-    title: "Static Resume",
-    description: "Responsive static resume",
-    image: "/images/projects/static.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/SHAJAR5110/static-resume",
-    previewUrl: "https://my-resume-chi-eight.vercel.app/",
-  },
-  
+
   
 ];
 
