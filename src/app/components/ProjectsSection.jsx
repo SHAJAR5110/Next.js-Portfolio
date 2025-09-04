@@ -7,6 +7,24 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "HVAC Website",
+    description: "HVAC website using wordpress for USA client. ",
+    image: "/images/projects/adams.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://adamssvcs.com/",
+    previewUrl: "https://adamssvcs.com/",
+  },
+    {
+    id: 2,
+    title: "Agentic Ai Project",
+    description: "Agentic Ai project: Website for USA client company Robo Growth Partners. ",
+    image: "/images/projects/demo.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/SHAJAR5110/demo",
+    previewUrl: "https://demo-henna-two.vercel.app/",
+  },
+  {
+    id: 3,
     title: "E-Commerce Website",
     description: "E-commerce using React.js and Tailwind CSS with firebase authentication and database.",
     image: "/images/projects/FashioNestecommerce.png",
@@ -15,7 +33,7 @@ const projectsData = [
     previewUrl: "https://github.com/SHAJAR5110/e-commerce",
   },
   {
-    id: 2,
+    id: 4,
     title: "Hospital Ai Assistant project for Client",
     description: "Developed an AI-powered voice assistant using GoHighLevel, n8n, and Vapithat handled real-time customer calls, processed voice inputs using Gemini,and automated CRM actions",
     image: "/images/projects/ClientProject.png",
@@ -24,7 +42,7 @@ const projectsData = [
     previewUrl: "https://www.linkedin.com/posts/shajar-abbas-45a855268_automation-n8n-vapi-activity-7322056537479241728-ubmx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGfGUYBiqD39b4369d0DhRnQvjqs9KEa28",
   },
   {
-    id: 3,
+    id: 5,
     title: "Hackathon Project of GEN AI from PEC",
     description: "Pakistan Engineering Council Hackathon Project: Developed a web app using python and streamlit. Dr. Ai chatbot based on RAG for medical assistance, providing accurate and reliable information to users retrieved from a pdf file using langchain.",
     image: "/images/projects/DrAi.png",
@@ -32,8 +50,26 @@ const projectsData = [
     gitUrl: "https://github.com/SHAJAR5110/Dr.-Ai",
     previewUrl: "https://98czftepcm5knsgki8gtso.streamlit.app/",
   },
+  {
+    id: 6,
+    title: "Data Secure Encryption System",
+    description: "Develop a Streamlit-based secure data storage and retrieval system where: Users store data with a unique passkey. Users decrypt data by providing the correct passkey. Multiple failed attempts result in a forced reauthorization (login page). The system operates entirely in memory without external databases.",
+    image: "/images/projects/secure.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/SHAJAR5110/Secure-Data-Encryption-System-Using-Streamlit",
+    previewUrl: "https://secure-data-encryption-system-using-app-2bcee5yf7ef8dsaabnq5lf.streamlit.app/",
+  },
+  {
+      id: 7,
+      title: "Soptify Clone",
+      description: "Spotify clone with Html and CSS",
+      image: "/images/projects/spotify.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/SHAJAR5110/Spotify-Clone",
+      previewUrl: "https://spotify-clone-seven-blush.vercel.app/",
+    },
    {
-    id: 4,
+    id: 8,
     title: "Resume Aanalyzer",
     description: "Resume Analyzer is a web application that uses the OpenAI API to analyze resumes and provide feedback on their content and structure. It helps job seekers improve their resumes by offering suggestions for improvement.",
     image: "/images/projects/resumeAnalyzer.png",
@@ -42,7 +78,16 @@ const projectsData = [
     previewUrl: "https://www.linkedin.com/posts/shajar-abbas-45a855268_reactjs-flask-generativeai-activity-7330067490103877632-a17V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGfGUYBiqD39b4369d0DhRnQvjqs9KEa28",
   },
   {
-    id: 5,
+    id: 9,
+    title: "Eco Aware Project",
+    description: "Eco Aware is a web application that uses the OpenAI API to provide users with information about eco-friendly products and practices. It helps users make informed decisions about their purchases and lifestyle choices.",
+    image: "/images/projects/ecoaware.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/SHAJAR5110/EcoAware",
+    previewUrl: "https://eco-aware-six.vercel.app/",
+  },
+  {
+    id: 10,
     title: "React Chatbot using Groq API",
     description: "Chatbot is a web application that uses the Groq API to provide users with a conversational interface for asking questions and receiving answers. It is built using React.js and tailwind CSS and offers a user-friendly experience.",
     image: "/images/projects/myAI.png",
@@ -51,7 +96,7 @@ const projectsData = [
     previewUrl: "https://www.linkedin.com/posts/shajar-abbas-45a855268_reactjs-aichatbot-groq-activity-7330063537194631168-2OTy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGfGUYBiqD39b4369d0DhRnQvjqs9KEa28",
   },
   {
-    id: 6,
+    id: 11,
     title: "Quote Generator",
     description: "Quote Generator is a web application that uses the Public API to generate random quotes. It is built using React.js and tailwind CSS and offers a user-friendly experience.",
     image: "/images/projects/quote.png",
@@ -60,7 +105,7 @@ const projectsData = [
     previewUrl: "https://www.linkedin.com/posts/shajar-abbas-45a855268_reactjs-webdevelopment-opensource-activity-7330055897068605441-yinc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGfGUYBiqD39b4369d0DhRnQvjqs9KEa28",
   },
   {
-    id: 7,
+    id: 12,
     title: "Google Notes",
     description: "Google Notes is a web application that allows users to create and manage notes. It is built using React.js and tailwind CSS and offers a user-friendly experience.",
     image: "/images/projects/notes.png",
@@ -69,7 +114,7 @@ const projectsData = [
     previewUrl: "https://google-notes-in-react.vercel.app/",
   },
   {
-    id: 8,
+    id: 13,
     title: "Clone internee",
     description: "Clone internee is a web application that allows users to create and manage notes. It is built using React.js and tailwind CSS and offers a user-friendly experience and responsive UI as well.",
     image: "/images/projects/internee.png",
@@ -78,7 +123,7 @@ const projectsData = [
     previewUrl: "https://clone-internee-pk.vercel.app/",
   },
   {
-    id: 9,
+    id: 14,
     title: "Secure Data Encryption System",
     description: "Develop a Streamlit-based secure data storage and retrieval system where: Users store data with a unique passkey. Users decrypt data by providing the correct passkey. Multiple failed attempts result in a forced reauthorization (login page). The system operates entirely in memory without external databases.",
     image: "/images/projects/security.png",
@@ -87,7 +132,7 @@ const projectsData = [
     previewUrl: "https://secure-data-encryption-system-using-app-2bcee5yf7ef8dsaabnq5lf.streamlit.app/",
   },
   {
-    id: 10,
+    id: 15,
     title: "Data Sweeper",
     description: "Handling messy CSV and Excel files can be frustrating, but Data Sweeper makes it effortless! This Streamlit-powered web app allows users to upload, clean, visualize, and convert their data in just a few clicks.",
     image: "/images/projects/dataSweeper.png",
@@ -97,7 +142,7 @@ const projectsData = [
   },
 
   {
-    id: 11,
+    id: 16,
     title: "Google Unit Converter",
     description: "Google Unit Converter is a simple and easy-to-use unit conversion tool that allows users to convert between different units of measurement. It supports a wide range of units, including length, weight, volume, temperature, and more.",
     image: "/images/projects/googleunitconverter.png",
@@ -106,7 +151,7 @@ const projectsData = [
     previewUrl: "https://app-unit-conversion-cpbdnb26qkpwcuaykfss7z.streamlit.app/",
   },
   {
-    id: 12,
+    id: 17,
     title: "FashioNest 'E-commerce Website'",
     description: "FashioNest is an e-commerce website that offers clothing. It is built using React.js, Next.js, and Tailwind CSS also have a clerk authentication system ,including cart and checkout system.",
     image: "/images/projects/FashioNest.png",
@@ -115,7 +160,7 @@ const projectsData = [
     previewUrl: "https://fashio-nest-ecommerce.vercel.app/",
   },
   {
-    id: 13,
+    id: 18,
     title: "E-commerce Website",
     description: "E-commerce website with React js(Next.js) and Tailwind css",
     image: "/images/projects/ecommerce.png",
@@ -124,16 +169,7 @@ const projectsData = [
     previewUrl: "https://next-js-ecommerce-snowy.vercel.app/",
   },
   {
-    id: 14,
-    title: "Soptify Clone",
-    description: "Spotify clone with Html and CSS",
-    image: "/images/projects/spotify.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/SHAJAR5110/Spotify-Clone",
-    previewUrl: "https://spotify-clone-seven-blush.vercel.app/",
-  },
-  {
-    id: 15,
+    id: 19,
     title: "Game Page",
     description: "The Front-end of Game Page in Next js and Tailwind css", 
     image: "/images/projects/GamePage.png",
@@ -142,7 +178,7 @@ const projectsData = [
     previewUrl: "https://game-page-frontend.vercel.app/",
   },
   {
-    id: 16,
+    id: 20,
     title: "Mini Project",
     description: "Mini Project for learning purpose",
     image: "/images/projects/MiniProject.png",
@@ -151,7 +187,7 @@ const projectsData = [
     previewUrl: "https://mini-project-navy-three.vercel.app/",
   },
   {
-    id: 17,
+    id: 21,
     title: "Number Guessing Game in Python",
     description: "CLI based number guessing game",
     image: "/images/projects/NumbreGuessing.png",
@@ -160,7 +196,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 18,
+    id: 22,
     title: "Domestic Services Web App",
     description: "The FixNow is Domestic Services Web App for all your home needs, 24/7 service providers are available.",
     image: "/images/projects/fixnow.jpeg",
@@ -169,7 +205,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 19,
+    id: 23,
     title: "Top-down Car Game in C#",
     description: "The Simple Top-down Car Game in C# using Windows Form Application",
     image: "/images/projects/topdown.png",
@@ -178,7 +214,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 20,
+    id: 24,
     title: "Calculator",
     description: "use this command in your terminal to calculate, npm i cmd-simple-calculator",
     image: "/images/projects/cmdCalculator.png",
@@ -187,7 +223,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 21,
+    id: 25,
     title: "Number Guessing Game",
     description: "use this command in your terminal to play, npm i cli-mini-number-guessing-game",
     image: "/images/projects/cmdNGG.png",
@@ -196,7 +232,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 22,
+    id: 26,
     title: " ATM Machine",
     description: "use this command in your terminal, npm i united-atm-machine",
     image: "/images/projects/ATM.png",
@@ -205,7 +241,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 23,
+    id: 27,
     title: " Words Counter",
     description: "The words counter is made with Typescript, Node js and inquirer. For use just type 'nmp i count-my-words' in your cmd.",
     image: "/images/projects/WordCounter.png",
@@ -214,7 +250,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 24,
+    id: 28,
     title: " Todo Task",
     description: "Todo Web App",
     image: "/images/projects/TodoWeb.png",
@@ -223,7 +259,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 25,
+    id: 29,
     title: " Calculator",
     description: "Calculator Web App",
     image: "/images/projects/WebCalculator.jpeg",
@@ -232,7 +268,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 26,
+    id: 30,
     title: " Different Python Codes",
     description: "",
     image: "/images/projects/DpythonCodes.png",

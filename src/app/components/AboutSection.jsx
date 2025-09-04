@@ -5,19 +5,36 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
+    title: "Certifications",
+    id: "certifications",
+    content: (
+      <ul className="list-disc pl-2">
+       <li>Certified Gen Ai Developer (PEC)</li>
+       <li>Two Internships in Web Development</li>
+       <li>One Internship in Frontend Development</li>
+       <li>Html</li>
+       <li>CSS</li>
+       <li>Django</li>
+       <li>Python</li>
+       <li>DEN Coding Competition</li>
+       <li>React</li>
+      </ul>
+    ),
+  },
+  {
     title: "Skills",
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Python</li>
+        <li>Python + OpenAI SDK</li>
         <li>React & Next.js</li>
         <li>JavaScript & Typescript</li>
-        <li>Node.js</li>
-        <li>MongoDB</li>
+        <li>Node.js / Express</li>
+        <li>MongoDB + Firebase </li>
         <li>Html & CSS</li>
-        <li>Django</li>
-        <li>GHL (GoHighLevel)</li>
-        <li>Vapi</li>
+        <li>Django, Fast Api & streamlit</li>
+        <li>GHL (GoHighLevel) </li>
+        <li>Vapi & ElevenLabs</li>
         <li>n8n & make.com</li>
       </ul>
     ),
@@ -31,21 +48,7 @@ const TAB_DATA = [
         <li>F.sc Bahria College</li>
       </ul>
     ),
-  },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-       <li>Html</li>
-       <li>CSS</li>
-       <li>Django</li>
-       <li>Python</li>
-       <li>DEN Coding Competition</li>
-       <li>React</li>
-      </ul>
-    ),
-  },
+  }
 ];
 
 const AboutSection = () => {
