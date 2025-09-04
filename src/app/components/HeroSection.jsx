@@ -24,9 +24,7 @@ const HeroSection = () => {
               sequence={[
                 "MERN Stack Developer",
                 1000,
-                "Web Developer",
-                1000,
-                "Agency Ai Developer",
+                "Agentic Ai Developer",
                 1000,
                 "Programmer",
                 1000,
@@ -37,7 +35,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          I am a passionate MERN Stack and Agentic Ai Developer with expertise in building dynamic, user-friendly web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, I specialize in creating full-stack solutions tailored to client needs. Currently expanding my skill set by diving into Agentic Ai to develop smarter, data-driven applications. 
+          I am a passionate MERN Stack and Agentic Ai Developer with expertise in building dynamic, user-friendly web applications. Proficient in MongoDB, Express.js, React.js, and Node.js, I specialize in creating full-stack solutions tailored to client needs. Working on the OpenAi SDK, I am expanding my skill set by diving into Agentic Ai to develop smarter, data-driven applications.
           </p>
           <div>
             <Link
