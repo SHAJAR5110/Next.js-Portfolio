@@ -1,44 +1,41 @@
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const data = {
-    email: e.target.email.value,
-    subject: e.target.subject.value,
-    message: e.target.message.value,
-  };
-  const JSONdata = JSON.stringify(data);
-  const endpoint = "/api/send";
+import nodemailer from "nodemailer";
 
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSONdata,
-  };
-
-  const response = await fetch(endpoint, options);
-  
-  // Check if the response is empty or not in JSON format
-  if (!response.ok) {
-    console.error("Error with response:", response.statusText);
-    return;
-  }
-
-  const resData = await response.json(); // Get the response as plain text
-
-  // Try to parse it as JSON if possible
-  let jsonData;
+export async function POST(request) {
   try {
-    jsonData = JSON.parse(resData);
-  } catch (error) {
-    console.error("Failed to parse response as JSON:", error);
-    return;
-  }
+    const body = await request.json();
+    console.log("Request body:", body);
 
-  if (jsonData && response.status === 200) {
-    console.log("Message sent.");
-    setEmailSubmitted(true);
-  } else {
-    console.error("Failed to send message:", jsonData);
+    // Transporter setup
+    const transporter = nodemailer.createTransport({
+      service: "gmail", // Gmail use karna easy hai
+      auth: {
+        user: process.env.EMAIL,    // your Gmail
+        pass: process.env.PASSWORD, // App Password (not real Gmail password)
+      },
+    });
+
+    // Send email
+const info = await transporter.sendMail({
+  from: `"Portfolio Contact" <${process.env.EMAIL}>`,
+  to: process.env.EMAIL,            // tumhara inbox
+  replyTo: body.email,              // user ka email (important)
+  subject: body.subject,
+  text: `Message: ${body.message}\n\nFrom: ${body.email}`, // plain text body
+  html: `<p>${body.message}</p><p><b>From:</b> ${body.email}</p>`, // HTML body
+});
+
+
+    console.log("Message sent:", info.messageId);
+
+    return new Response(
+      JSON.stringify({ message: "Email sent successfully" }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return new Response(
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
-};
+}
