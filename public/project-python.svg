@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="pythonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd60a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffc300;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#pythonGrad)"/>
+  <circle cx="200" cy="125" r="60" fill="#ffffff" opacity="0.1"/>
+  <text x="200" y="140" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">🐍</text>
+  <text x="200" y="220" font-size="18" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">Python Project</text>
+</svg>

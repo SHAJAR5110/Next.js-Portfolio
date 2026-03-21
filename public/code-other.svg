@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="otherCode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#otherCode)"/>
+
+  <!-- Window header -->
+  <rect width="400" height="30" fill="#0f3460"/>
+  <circle cx="15" cy="15" r="4" fill="#ff5e5b"/>
+  <circle cx="30" cy="15" r="4" fill="#ffbd2e"/>
+  <circle cx="45" cy="15" r="4" fill="#26c281"/>
+  <text x="200" y="20" font-size="12" fill="#a78bfa" text-anchor="middle" font-family="monospace">project.ts</text>
+
+  <!-- Code content -->
+  <text x="15" y="55" font-size="11" fill="#ff79c6" font-family="monospace">interface Project {</text>
+  <text x="30" y="70" font-size="11" fill="#8be9fd" font-family="monospace">name: string</text>
+  <text x="30" y="85" font-size="11" fill="#8be9fd" font-family="monospace">description: string</text>
+  <text x="30" y="100" font-size="11" fill="#8be9fd" font-family="monospace">technologies: string[]</text>
+  <text x="30" y="115" font-size="11" fill="#8be9fd" font-family="monospace">github: URL</text>
+  <text x="15" y="130" font-size="11" fill="#ff79c6" font-family="monospace">}</text>
+
+  <text x="15" y="150" font-size="11" fill="#8be9fd" font-family="monospace">const myProject: Project</text>
+  <text x="30" y="165" font-size="10" fill="#ff79c6" font-family="monospace">=</text>
+  <text x="50" y="165" font-size="10" fill="#ff79c6" font-family="monospace">{}</text>
+
+  <text x="15" y="185" font-size="10" fill="#50fa7b" font-family="monospace">// Full Stack Development</text>
+
+  <!-- Syntax highlighting bar at bottom -->
+  <rect y="215" width="400" height="35" fill="#0f3460"/>
+  <circle cx="20" cy="232" r="3" fill="#a78bfa"/>
+  <text x="28" y="237" font-size="11" fill="#a78bfa" font-family="monospace">TypeScript • Development</text>
+</svg>

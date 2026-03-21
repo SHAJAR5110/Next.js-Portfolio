@@ -20,22 +20,24 @@ const HeroSection = () => {
               Hello, I&apos;m{" Shajar Abbas "}
             </span>
             <br></br>
-            <TypeAnimation
-              sequence={[
-                "MERN Stack Developer",
-                1000,
-                "Agentic Ai Developer",
-                1000,
-                "Programmer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            <span className="text-3xl sm:text-4xl lg:text-6xl">
+              <TypeAnimation
+                sequence={[
+                  "AI Engineer",
+                  1000,
+                  "Agentic Developer",
+                  1000,
+                  "AI Solutions Architect",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </span>
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I am a MERN Stack & Agentic AI Developer with expertise in MongoDB, Express.js, React.js, Node.js, and OpenAI SDK. I have completed internships in web development and delivered multiple international projects, particularly for USA clients. My focus is on building scalable, user-friendly web applications and developing Agentic AI solutions that leverage data-driven intelligence to solve real-world problems.
+            I am an AI Engineer specializing in Agentic AI with expertise in building intelligent, autonomous systems and full-stack platforms. Skilled in Python, OpenAI SDK, n8n, Make, and Digital FTE development. I deliver AI-powered solutions for international clients, reducing operational workload by up to 90% through automation and intelligent workflows. My focus is on creating scalable AI architectures and spec-driven solutions that solve real-world problems.
           </p>
           <div>
             <Link
@@ -46,7 +48,7 @@ const HeroSection = () => {
             </Link>
             <Link
               target="_blank"
-              href="https://drive.google.com/file/d/1i-I7fSE7vx96g2JnV1BwXlL4p7n1muAw/view?usp=sharing"
+              href="https://drive.google.com/file/d/1XcmpyWnYWY35r6JEBtxTGtNRnXxqTUPU/view?usp=sharing"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
