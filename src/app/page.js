@@ -1,23 +1,29 @@
-import HeroSection from "./components/HeroSection";
+import MotionProvider from "./components/MotionProvider";
 import Navbar from "./components/Navbar";
+import ScrollProgress from "./components/ScrollProgress";
+import HeroSection from "./components/HeroSection";
+import StatsStrip from "./components/StatsStrip";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
-import EmailSection from "./components/EmailSection";
+import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import AchievementsSection from "./components/AchievementsSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <MotionProvider>
+      <ScrollProgress />
       <Navbar />
-      <div className="container mt-24 mx-auto px-12 py-4">
+
+      {/* 100dvh as an arbitrary value: Tailwind 3.3 has no min-h-dvh utility. */}
+      <main id="main" className="flex min-h-[100dvh] flex-col">
         <HeroSection />
-        <AchievementsSection />
+        <StatsStrip />
         <AboutSection />
         <ProjectsSection />
-        <EmailSection />
-      </div>
+        <ContactSection />
+      </main>
+
       <Footer />
-    </main>
+    </MotionProvider>
   );
 }

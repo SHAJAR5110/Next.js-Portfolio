@@ -2,26 +2,240 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Design tokens
+   Mirrors of the Tailwind theme, for raw CSS (gradients, scrollbar).
+   ============================================================ */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --surface-0: #08080d;
+  --surface-1: #0e0e16;
+  --surface-2: #15151f;
+  --surface-3: #1c1c29;
+
+  --line: #22222f;
+  --line-strong: #32324a;
+
+  --content: #f2f3f7;
+  --content-muted: #a0a5b8;
+  --content-faint: #7e8598;
+
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-strong: #7c3aed;
+  --accent-deep: #4f46e5;
+  --spark: #22d3ee;
+
+  --nav-height: 4.5rem;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Keeps anchored sections clear of the fixed navbar. */
+    scroll-padding-top: calc(var(--nav-height) + 1.5rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--surface-0);
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Ambient wash anchored to the top of the document.
+       Deliberately not background-attachment:fixed — that repaints on
+       every scroll frame in iOS Safari. */
+    background-image:
+      radial-gradient(
+        60rem 40rem at 12% -10%,
+        rgba(124, 58, 237, 0.16),
+        transparent 60%
+      ),
+      radial-gradient(
+        45rem 35rem at 92% 8%,
+        rgba(34, 211, 238, 0.09),
+        transparent 55%
+      );
+    background-repeat: no-repeat;
+  }
+
+  /* One consistent focus treatment across the whole site. */
+  :focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 3px;
+    border-radius: 0.375rem;
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+    color: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Numbers that change should never reflow their container. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-0);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+  border: 2px solid var(--surface-0);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-strong);
+}
+html {
+  scrollbar-color: var(--line-strong) var(--surface-0);
+  scrollbar-width: thin;
+}
+
+/* ============================================================
+   Components
+   ============================================================ */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Frosted panel used for cards, the navbar and the mobile drawer. */
+  .glass {
+    background-color: rgba(20, 20, 31, 0.72);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--line);
+  }
+
+  .card {
+    @apply relative overflow-hidden rounded-2xl border border-line bg-surface-1;
+    transition:
+      transform 0.35s var(--ease-expo),
+      border-color 0.25s ease,
+      box-shadow 0.35s var(--ease-expo);
+  }
+
+  .card:hover {
+    @apply border-line-strong;
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 32px 80px -28px rgba(124, 58, 237, 0.45);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      110deg,
+      #ffffff 0%,
+      var(--accent-light) 42%,
+      var(--spark) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Small uppercase section eyebrow. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-2xs font-semibold uppercase tracking-[0.18em] text-accent-light;
+  }
+
+  /* Hairline that fades out at both ends. */
+  .rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      var(--line-strong) 20%,
+      var(--line-strong) 80%,
+      transparent
+    );
+  }
+
+  /* Subtle grid, used behind the hero. */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      #000 40%,
+      transparent 100%
+    );
+  }
+
+  /* Fades the edges of the horizontally scrolling tech strip. */
+  .fade-x {
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--surface-2) 25%,
+      var(--surface-3) 50%,
+      var(--surface-2) 75%
+    );
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+}
+
+/* ============================================================
+   Motion preferences
+   Honoured globally so no component has to remember.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card:hover {
+    transform: none;
+  }
 }
